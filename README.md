@@ -5,11 +5,11 @@ tus.io上的传输协议的翻译：
 
 原文地址在[这里](http://tus.io/protocols/resumable-upload.html#file-creation)
 
-下面只对其中的核心思想做一下自我的解读，如果有不明白的，去参看原文版本：
+下面只对其中的核心思想做一下自我的解读。
 
 ### 协议核心
 
-协议核心描述了怎么样去回复中断的上传。
+协议核心描述了怎么样去恢复中断的上传。
 
 所有的客户端与服务器必须（MUST）执行这个协议核心。
 
@@ -120,18 +120,18 @@ Servers MUST acknowledge successful PATCH operations using a 200 Ok status, whic
 
 客户端继续使用核心协议执行实际的上传过程。
 
-6.2. Checksums校验
+#### 6.2. Checksums校验
 
 这个扩展用来定义怎么为一个上传的文件的每个包或子文件提供校验。
 
-6.3. Parallel Chunks并行块
+#### 6.3. Parallel Chunks并行块
 
 这个扩展用来定义怎么并行的上传一个文件的多个块，以解决一个单独的tcp连接数的限制问题。
 
-6.4. Metadata文件元数据
+#### 6.4. Metadata文件元数据
 这个扩展用来定义在上传文件的过程怎么提供文件元信息。
 
-6.5. Streams流
+#### 6.5. Streams流
 
 
 这个扩展用来定义怎么上传不知道数据大小的上传场景。
