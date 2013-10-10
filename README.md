@@ -67,7 +67,6 @@ Offset值应该等于，但是也可能小于当前资源的offset,服务器必�
 
 客户端应该在PATCH请求里发送剩下的所有数据，但是也可以在需要的场景下使用多个小请求。（比如：NGINX buffering requests before they reach their backend）。
 
-Servers MUST acknowledge successful PATCH operations using a 200 Ok status, which implicitly means that clients can assume that the new Offset = Offset + Content-Length.
 服务器必须使用200 ok来应答一次成功的PATCH操作，以让客户端能够确定新的OffSet= Offset + Content-Length.
 
 客户端和服务器都应该尝试网络可预见的错误检测以及处理。他们可以通过检查读写socket错误（ read/write socket errors），以及设定读写超时（read/write timeouts），来执行这些任务。客户端和服务器都应该使用一个30秒的超时。. A timeout SHOULD be handled by closing the underlaying connection.
